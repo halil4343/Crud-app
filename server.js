@@ -3,6 +3,7 @@ const dotenv = require("dotenv")
 const morgan = require("morgan")
 const bodyParser = require("body-parser")
 const path = require("path")
+const connectDB = require("./server/database/connection")
 
 const app = express()
 
@@ -12,6 +13,8 @@ const PORT = process.env.PORT || 8080
 //log request
 app.use(morgan("tiny"))
 
+//connect DB
+connectDB()
 
 //load routes
 app.use("/",require("./server/routes/router"))
@@ -29,10 +32,8 @@ app.set("view engine", "ejs")
 app.use("/css", express.static(path.resolve(__dirname,"assets/css")))
 app.use("/img", express.static(path.resolve(__dirname,"assets/img")))
 app.use("/js", express.static(path.resolve(__dirname,"assets/js")))
+app.use('/assets', express.static(path.resolve(__dirname,"assets")));
 
-app.get("/", (req,res)=>{
-    res.render("index")
-})
 
 app.listen(PORT,()=>{console.log(`server is running on http://localhost:${PORT}`)})
 
