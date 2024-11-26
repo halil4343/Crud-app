@@ -4,7 +4,7 @@ exports.homeRoutes = (req, res) => {
 }
 
 exports.add_user = (req, res) => {
-    res.render("add_userr")
+    res.render("add_user")
 }
 
 exports.update_user = (req, res) => {
