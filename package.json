@@ -1,0 +1,32 @@
+{
+  "name": "crudapp",
+  "version": "1.0.0",
+  "description": "crud application with express and mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build:css": "npx tailwindcss -i ./assets/css/style.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halil4343/Crud-app.git"
+  },
+  "author": "halil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halil4343/Crud-app/issues"
+  },
+  "homepage": "https://github.com/halil4343/Crud-app#readme",
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.2",
+    "morgan": "^1.10.0",
+    "nodeman": "^1.1.2"
+  }
+}

@@ -1,0 +1,42 @@
+<%- include ("include/_header") %>
+
+<div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+  <!-- Flex container for heading and button -->
+  <div class="flex justify-between items-center mb-6">
+    <!-- All Users button -->
+    <a href="/" class="text-blue-500 hover:text-blue-700 flex items-center border-2 border-blue-500 rounded-lg pr-1 ">
+      <!-- Back arrow icon -->
+      <span class="mr-2 text-xl">&lt;&lt;</span>
+      All Users
+    </a>
+    <!-- Add New User heading (centered) -->
+    <h1 class="text-2xl font-bold text-gray-700 flex-1 ml-8 ">Add New User</h1>
+  </div>
+
+  <!-- Form for adding new user -->
+  <form action="/add-user" method="POST">
+    <div class="mb-4">
+      <label for="name" class="block text-gray-700 font-semibold">Name:</label>
+      <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <div class="mb-4">
+      <label for="email" class="block text-gray-700 font-semibold">Email:</label>
+      <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+    </div>
+    <div class="mb-4">
+      <label for="gender" class="block text-gray-700 font-semibold">Gender:</label>
+      <select id="gender" name="gender" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+    <div class="mb-6">
+      <label for="status" class="block text-gray-700 font-semibold">Status:</label>
+      <select id="status" name="status" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+      </select>
+    </div>
+    <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Add User</button>
+  </form>
+</div>
