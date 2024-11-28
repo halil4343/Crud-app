@@ -27,10 +27,10 @@ app.set("view engine", "ejs")
 // app.set("views",path.resolve(__dirname,"views"))
 
 //load assets
-app.use("/css", express.static(path.resolve(__dirname,"assets/css")))
-app.use("/img", express.static(path.resolve(__dirname,"assets/img")))
-app.use("/js", express.static(path.resolve(__dirname,"assets/js")))
-app.use('/assets', express.static(path.resolve(__dirname,"assets")));
+// app.use("/css", express.static(path.resolve(__dirname,"assets/css")))
+// app.use("/img", express.static(path.resolve(__dirname,"assets/img")))
+// app.use("/js", express.static(path.resolve(__dirname,"assets/js")))
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 //load routes
 app.use("/",require("./server/routes/router"))

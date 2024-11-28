@@ -14,7 +14,7 @@
   </div>
 
   <!-- Form for adding new user -->
-  <form action="/add-user" method="POST">
+  <form action="/api/users" method="POST" id="add_user">
     <div class="mb-4">
       <label for="name" class="block text-gray-700 font-semibold">Name:</label>
       <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
@@ -40,3 +40,4 @@
     <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Add User</button>
   </form>
 </div>
+<%- include ("include/_footer") %>
