@@ -16,8 +16,6 @@ app.use(morgan("tiny"))
 //connect DB
 connectDB()
 
-//load routes
-app.use("/",require("./server/routes/router"))
 
 
 
@@ -34,10 +32,7 @@ app.use("/img", express.static(path.resolve(__dirname,"assets/img")))
 app.use("/js", express.static(path.resolve(__dirname,"assets/js")))
 app.use('/assets', express.static(path.resolve(__dirname,"assets")));
 
+//load routes
+app.use("/",require("./server/routes/router"))
 
 app.listen(PORT,()=>{console.log(`server is running on http://localhost:${PORT}`)})
-
-let users = [
-    { id: 1, email: "john@example.com", status: "active", gender: "male" },
-    { id: 2, email: "jane@example.com", status: "inactive", gender: "female" },
-  ];
