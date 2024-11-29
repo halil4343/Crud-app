@@ -7,10 +7,11 @@
     <td class="p-3"><%= users[i].gender %></td>
     <td class="p-3"><%= users[i].status %></td>
     <td class="p-3">
-      <a href="/update-user" class="text-blue-500">Edit</a> |
-      <form action="/delete/3" method="POST" class="inline">
-        <button type="submit" class="text-red-500">Delete</button>
-      </form>
+      <a href="/update-user" class="text-blue-500">Edit</a> | 
+      <button 
+      class="text-red-500 delete-btn" 
+      data-id="<%= users[i]._id %>">Delete</button>
+
     </td>
   </tr>
   <% } %>

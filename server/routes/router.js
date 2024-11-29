@@ -10,6 +10,7 @@ route.get("/add-user", servRender.add_user)
 route.get("/update-user",servRender.update_user)
 
 
+
 //API
 route.post("/api/users",controller.create)
 route.get("/api/users",controller.find)

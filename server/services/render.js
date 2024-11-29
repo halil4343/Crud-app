@@ -1,23 +1,18 @@
 const userDb = require("../model/model");
+const axios = require("axios")
 
-exports.homeRoutes = async (req, res) => {
-  try {
-      const userList = await userDb.find({});
-      
-      // Check if users are found
-      if (userList.length === 0) {
-          console.warn("No users found in the database.");
-      }
+exports.homeRoutes = (req, res) => {
+    // Make a get request to /api/users
+    axios.get('http://localhost:3000/api/users')
+        .then(function(response){
+            res.render('index', { users : response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
 
-      res.status(200).render("index", { users: userList });
-  } catch (error) {
-      console.error("Error fetching users from the database:", error.message);
-      res.status(500).render("index", { 
-          users: [],
-          errorMessage: "Something went wrong. Please try again later."
-      });
-  }
-};
+    
+}
 
 
 exports.add_user = (req, res) => {

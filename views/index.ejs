@@ -7,51 +7,18 @@
       <thead>
         <tr class="bg-gray-100">
           <th class="p-3 text-left">ID</th>
+          <th class="p-3 text-left">Name</th>
           <th class="p-3 text-left">Email</th>
-          <th class="p-3 text-left">Status</th>
           <th class="p-3 text-left">Gender</th>
+          <th class="p-3 text-left">Status</th>
           <th class="p-3 text-left">Actions</th>
         </tr>
       </thead>
-      <tbody><tr class="border-t">
-        <td class="p-3">1</td>
-        <td class="p-3">john@example.com</td>
-        <td class="p-3">Active</td>
-        <td class="p-3">Male</td>
-        <td class="p-3">
-          <a href="/update-user" class="text-blue-500">Edit</a> |
-          <form action="/delete/1" method="POST" class="inline">
-            <button type="submit" class="text-red-500">Delete</button>
-          </form>
-        </td>
-      </tr>
-      <tr class="border-t">
-        <td class="p-3">2</td>
-        <td class="p-3">jane@example.com</td>
-        <td class="p-3">Inactive</td>
-        <td class="p-3">Female</td>
-        <td class="p-3">
-          <a href="/update-user" class="text-blue-500">Edit</a> |
-          <form action="/delete/1" method="POST" class="inline">
-            <button type="submit" class="text-red-500">Delete</button>
-          </form>
-        </td>
-      </tr>
-      <tr class="border-t">
-        <td class="p-3">3</td>
-        <td class="p-3">alex@example.com</td>
-        <td class="p-3">Active</td>
-        <td class="p-3">Male</td>
-        <td class="p-3">
-          <a href="/update-user" class="text-blue-500">Edit</a> |
-          <form action="/delete/3" method="POST" class="inline">
-            <button type="submit" class="text-red-500">Delete</button>
-          </form>
-        </td>
-      </tr>
+      <tbody>
+      <%- include ("include/_show") %>
+
       </tbody>
       </table>
-      <%= users %> 
       </div>
       <%- include ("include/_footer") %>
 
