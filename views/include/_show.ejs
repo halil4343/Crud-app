@@ -1,0 +1,16 @@
+<% for(i=0;i< users.length;i++){ %> 
+
+<tr class="border-t">
+    <td class="p-3"><%= i+1 %></td>
+    <td class="p-3"><%= users[i].name %></td>
+    <td class="p-3"><%= users[i].email %></td>
+    <td class="p-3"><%= users[i].gender %></td>
+    <td class="p-3"><%= users[i].status %></td>
+    <td class="p-3">
+      <a href="/update-user" class="text-blue-500">Edit</a> |
+      <form action="/delete/3" method="POST" class="inline">
+        <button type="submit" class="text-red-500">Delete</button>
+      </form>
+    </td>
+  </tr>
+  <% } %>
