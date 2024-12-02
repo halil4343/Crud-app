@@ -1,3 +1,4 @@
+//submit
 $(document).ready(function() {
     $("#add_user").submit(function(event) {
         alert("Data inserted successfully!");
@@ -5,10 +6,33 @@ $(document).ready(function() {
     });
 });
 
+//update
+$("#update_button").click(function(event){
+  event.preventDefault()
+
+  var unindexArr = $("#update_user").serializeArray()
+  var data = {}
+  $.map(unindexArr, function(n, i){
+    data[n["name"]] = n["value"]
+  })
+
+  var request = {
+    "url" : `http://localhost:3000/api/users/${data.id}`,
+    method : "PUT",
+    "data" : data
+  }
+
+  $.ajax(request).done(function(response){
+    alert("User updated successfully!")
+    location.reload(); // Reload the page
+
+  })
+})
 
 
 
 
+//delete 
 document.addEventListener("DOMContentLoaded", () => {
     const deleteButtons = document.querySelectorAll(".delete-btn");
   

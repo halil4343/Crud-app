@@ -36,7 +36,7 @@ exports.find =(req,res) =>{
                     res.status(404).send({message:"Not found user with id " + id})
                 }else{
                     res.send(data)
-                    console.log(data)
+                    
                 }
             })
             .catch(err=>{
